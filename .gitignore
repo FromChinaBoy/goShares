@@ -7,5 +7,4 @@
 /node_modules
 Vagrantfile
 .vagrant
-simplewind/vendor/
 composer.lock
