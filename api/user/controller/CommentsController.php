@@ -74,9 +74,8 @@ class CommentsController extends RestBaseController
         }
 
         $data = $comment->getDatas($map);
-
         if (empty($this->apiVersion) || $this->apiVersion == '1.0.0') {
-            $response = [$data];
+            $response = $data;
         } else {
             $response = ['list' => $data];
         }
