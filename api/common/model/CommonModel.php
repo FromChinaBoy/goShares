@@ -168,9 +168,12 @@ class CommonModel extends Model
         if (!empty($params['order'])) {
             $order = $this->strToArr($params['order']);
             foreach ($order as $key => $value) {
+
                 $upDwn      = substr($value, 0, 1);
                 $orderType  = $upDwn == '-' ? 'desc' : 'asc';
+
                 $orderField = substr($value, 1);
+
                 if (!empty($whiteParams)) {
                     if (in_array($orderField, $whiteParams)) {
                         $orderWhere[$orderField] = $orderType;
@@ -179,7 +182,6 @@ class CommonModel extends Model
                     $orderWhere[$orderField] = $orderType;
                 }
             }
-
             if (!empty($orderWhere)) {
                 $_this->order($orderWhere);
             }

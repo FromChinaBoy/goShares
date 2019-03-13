@@ -67,6 +67,9 @@ class CommentsController extends RestBaseController
             'object_id'  => $id,
             'table_name' => $table
         ];
+        $map['order']    = [
+            '-id',
+        ];
         $map['relation'] = 'user,to_user';
 
         if (!empty($input['page'])) {
